@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:gravity="center_horizontal"
-        facebook:preset_size = "small" />
+        facebook:preset_size="small" />
 
     <TextView
         android:id="@+id/list_user_name"

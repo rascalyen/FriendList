@@ -5,30 +5,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/selection_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical" >
-
-        <com.facebook.widget.ProfilePictureView
-            android:id="@+id/selection_profile_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
-            facebook:preset_size="normal" />
-
-        <TextView
-            android:id="@+id/selection_user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:textColor="#333"
-            android:textSize="18sp" />
-    </LinearLayout>
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="@string/friends"
+        android:textStyle="bold"
+        android:textColor="#333"
+        android:textSize="20sp" />
 
     <ListView
         android:id="@+id/list"
