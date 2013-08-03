@@ -12,12 +12,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:gravity="center_horizontal"
-        facebook:preset_size="small" />
+        facebook:preset_size = "small" />
 
     <TextView
         android:id="@+id/list_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_horizontal"
         android:textColor="#333"
         android:textSize="18sp" />
 
