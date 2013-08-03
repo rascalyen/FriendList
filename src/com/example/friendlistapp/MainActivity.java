@@ -68,12 +68,9 @@ public class MainActivity extends FragmentActivity {
 
 	private void onSessionStateChange(Session session, SessionState state,
 			Exception exception) {
-		// Only make changes if the activity is visible
 		if (isResumed) {
 			FragmentManager manager = getSupportFragmentManager();
-			// Get the number of entries in the back stack
 			int backStackSize = manager.getBackStackEntryCount();
-			// Clear the back stack
 			for (int i = 0; i < backStackSize; i++) {
 				manager.popBackStack();
 			}
