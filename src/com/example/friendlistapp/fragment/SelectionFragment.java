@@ -1,6 +1,8 @@
 package com.example.friendlistapp.fragment;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +22,7 @@ import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 
+
 /**
  * Authenticated fragment
  * 
@@ -30,8 +33,8 @@ public class SelectionFragment extends Fragment {
 
 	private TextView userNameView;
 	private ListView listView;
+	private List<GraphUser> friends;
 	private static final int REAUTH_ACTIVITY_CODE = 100;
-	private List<GraphUser> myusers;
 
 	private UiLifecycleHelper uiHelper;
 	private Session.StatusCallback callback = new Session.StatusCallback() {
@@ -47,16 +50,16 @@ public class SelectionFragment extends Fragment {
 			Bundle savedInstanceState) {
 		super.onCreateView(inflater, container, savedInstanceState);
 		View view = inflater.inflate(R.layout.selection, container, false);
-
+		
 		userNameView = (TextView) view.findViewById(R.id.selection_text);
 		listView = (ListView) view.findViewById(R.id.list);
 		listView.setFastScrollEnabled(true);
-
+		
 		Session session = Session.getActiveSession();
 		if (session != null && session.isOpened()) {
 			makeMyFriendsRequest(session);
 		}
-
+		
 		return view;
 	}
 
@@ -74,19 +77,34 @@ public class SelectionFragment extends Fragment {
 							Response response) {
 						if (session == Session.getActiveSession()) {
 							if (users.size() != 0) {
-								myusers = new ArrayList<GraphUser>();
-								myusers.addAll(users);
-								listView.setAdapter(new ListItemAdapter(
-										getActivity(), myusers));
+								sortFriends(users);
+								friends = new ArrayList<GraphUser>();
+								friends.addAll(users);
+								listView.setAdapter(new ListItemAdapter(getActivity(), friends));
 							}
 						}
 						if (response.getError() != null) {
-							Log.d("error!", response.getError()
+							Log.e("error!", response.getError()
 									.getErrorMessage());
 						}
 					}
 				});
 		request.executeAsync();
+	}
+	
+	
+	/**
+	 * Sort a list of GraphUser objects alphabetically
+	 * 
+	 * @param friends
+	 */
+	private void sortFriends(List<GraphUser> friends) {
+		Collections.sort(friends, new Comparator<GraphUser>() {
+			@Override
+			public int compare(GraphUser f1, GraphUser f2) {
+				return f1.getName().compareTo(f2.getName());
+			}
+		});
 	}
 
 	private void onSessionStateChange(final Session session,
