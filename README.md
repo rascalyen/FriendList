@@ -1,4 +1,4 @@
-FriendlistApp shows a listview of logged-in user's friends.
+FriendlistApp shows a listview of logged-in FB user's friends.
 
 ----------
 
