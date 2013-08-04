@@ -1,4 +1,4 @@
-package com.example.friendlistapp.fragment;
+package com.example.friendlistapp;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,8 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import com.example.friendlistapp.R;
-import com.example.friendlistapp.adapter.ListItemAdapter;
 import com.facebook.Request;
 import com.facebook.Response;
 import com.facebook.Session;

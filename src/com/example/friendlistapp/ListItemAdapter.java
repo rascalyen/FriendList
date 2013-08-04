@@ -1,4 +1,4 @@
-package com.example.friendlistapp.adapter;
+package com.example.friendlistapp;
 
 import java.util.List;
 import com.facebook.model.GraphUser;

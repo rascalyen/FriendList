@@ -1,4 +1,4 @@
-package com.example.friendlistapp.fragment;
+package com.example.friendlistapp;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
