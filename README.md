@@ -1,4 +1,5 @@
 FriendlistApp shows a listview of logged-in FB user's friends.
+Listview with Alphabet index scrolling.
 
 ----------
 
