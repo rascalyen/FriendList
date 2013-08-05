@@ -7,3 +7,7 @@ Libraries:
 - android-support-v4
 - Facebook Android SDK 3.0.2
 - picasso-1.1.1
+
+----------
+
+list view with section headers
