@@ -1,4 +1,5 @@
 FriendlistApp shows a listview of logged-in FB user's friends.
+Listview with Alphabet section headers.
 
 ----------
 
@@ -8,6 +9,3 @@ Libraries:
 - Facebook Android SDK 3.0.2
 - picasso-1.1.1
 
-----------
-
-list view with section headers
