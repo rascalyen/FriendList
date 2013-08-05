@@ -6,6 +6,7 @@
     <string name="app_id">399502476818571</string>
     <string name="settings">Settings</string>
     <string name="friends">My Friends</string>
+    <string name="imageDescription">Facebook Profile Image</string>
     <string name="get_started">To get started, log in using Facebook</string>
 
 </resources>

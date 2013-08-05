@@ -12,9 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import com.example.friendlistapp.R;
 import com.facebook.Request;
 import com.facebook.Response;
 import com.facebook.Session;
@@ -31,7 +28,6 @@ import com.facebook.model.GraphUser;
  */
 public class SelectionFragment extends Fragment {
 
-	private TextView userNameView;
 	private ListView listView;
 	private List<GraphUser> friends;
 	private static final int REAUTH_ACTIVITY_CODE = 100;
@@ -51,9 +47,8 @@ public class SelectionFragment extends Fragment {
 		super.onCreateView(inflater, container, savedInstanceState);
 		View view = inflater.inflate(R.layout.selection, container, false);
 		
-		userNameView = (TextView) view.findViewById(R.id.selection_text);
+		view.findViewById(R.id.selection_text);
 		listView = (ListView) view.findViewById(R.id.list);
-		listView.setFastScrollEnabled(true);
 		
 		Session session = Session.getActiveSession();
 		if (session != null && session.isOpened()) {
@@ -62,6 +57,7 @@ public class SelectionFragment extends Fragment {
 		
 		return view;
 	}
+	
 
 	/**
 	 * make request for friend list of authenticated user
